@@ -1,0 +1,28 @@
+---
+title: "ShinyAboutPage"
+output: html_document
+date: "2026-07-16"
+---
+<div style="margin-left: 75px; margin-right: 75px;">
+
+# Welcome!
+<br>
+  
+### This app has been designed to let you visualize groundfish mortality data from the U.S. West Coast region.
+
+>It displays mortality information for species in the [Pacific Coast Groundfish Fishery Management Plan](https://www.pcouncil.org/documents/2022/08/pacific-coast-groundfish-fishery-management-plan.pdf/). It includes landings and, where available, at-sea discard estimates. For select species and sectors, discard mortality rates are applied and the adjusted discard mortalities are shown (see Tables A1-A3 in the Groundfish Mortality Report for details). Commercial discard estimates are only available for sectors that are observed/monitored by the [West Coast Groundfish Observer Program](https://www.fisheries.noaa.gov/west-coast/fisheries-observers/northwest-fisheries-science-center-observer-programs#west-coast-groundfish-observer-program), the [At-Sea Hake Observer Program](https://www.fisheries.noaa.gov/west-coast/fisheries-observers/northwest-fisheries-science-center-observer-programs#at-sea-hake-observer-program), and/or the [Electronic Monitoring Program](https://www.fisheries.noaa.gov/west-coast/resources-fishing/electronic-monitoring-west-coast). Some commercial sectors were observed in a subset of years, and therefore will only have discard estimates for those years, and some commercial sectors (e.g. Incidental) are not observed at all. Recreational discard and landings are provided by the California Department of Fish and Wildlife, the Oregon Department of Fish and Wildlife, and the Washington Department of Fish and Wildlife. Research discards are provided by researchers holding a federal research permit, as well as some researchers operating in state waters. 
+
+
+### Where is this data from?
+
+>The data shown in this app are derived from the Groundfish Expanded Mortality Multiyear (GEMM) dataset produced by the [Fisheries Observation Science Program](https://www.fisheries.noaa.gov/west-coast/science-data/fisheries-observation-science-west-coast) at the [NOAA Fisheries](https://www.fisheries.noaa.gov/) [Northwest Fisheries Science Center](https://www.fisheries.noaa.gov/about/northwest-fisheries-science-center). The full dataset can be found [here](https://repository.library.noaa.gov/view/noaa/66762). Background, methodology, and further information can be found in the annual Groundfish Mortality Report that is published in draft form each year in the September [Pacific Fishery Management Council briefing book](https://www.pcouncil.org/briefing-book/) and in final form in the [NOAA Institutional Repository](https://repository.library.noaa.gov/).
+
+
+### Contact Us
+
+>This app was developed by Tirzah Blomquist, Kate Richerson, and Kayleigh Somers. For questions, please contact [kate.e.richerson@noaa.gov](mailto:kate.e.richerson@noaa.gov) or [kayleigh.somers@noaa.gov](mailto:kayleigh.somers@noaa.gov).
+
+<p style="text-align:center;">Last updated July 17, 2026</p>
+
+</div>
+
