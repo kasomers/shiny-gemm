@@ -17,7 +17,7 @@ fluidPage(
              tabPanel("Species Mortality by Sector",
                       h3("Getting started:"),
                       h5("1. Select a species of interest to see which fishery sectors contribute to total mortality."),
-                      h5("2. The", em("Combined Sector Mortality Plot"), "tab categorizes sectors into broader groupings."),
+                      h5("2. The", em("Combined Sector Mortality Plot"), "categorizes sectors into broader groupings."),
                       h5("3. For trends in particular sectors, select up to four and navigate to the",
                          em("Individuals Sector Plots"), "tab."),
                       HTML("<hr/>"),
