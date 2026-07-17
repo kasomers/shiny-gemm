@@ -8,7 +8,7 @@ library(readxl)
 
 #BEFORE reading in new GEMM excel, make sure data is in the same format as the 2026 released data
     #name your excel "GEMM Data"
-    #ignore this message if using data directly from Github
+    #ignore this message if using ShinyReadyData.csv directly from Github
 
 #read in the data
 groundfishdata <- read_excel("GEMM Data.xlsx", sheet="Table 3 UPDATE", skip = 2)
