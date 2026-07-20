@@ -20,7 +20,8 @@ fluidPage(
                       h5("2. The", em("Combined Sector Mortality Plot"), "categorizes sectors into broader groupings."),
                       h5("3. For trends in particular sectors, select up to four and navigate to the",
                          em("Individuals Sector Plots"), "tab."),
-                      HTML("<hr/>"),
+                      HTML("<hr style='border: none; height: 0.7px; background-color: #B4CFEC;'/>"),
+                      br(),
                       sidebarLayout(
                         sidebarPanel(
                           selectInput(inputId = "speciesInput", label = "Species (Select One)", 
@@ -65,7 +66,7 @@ fluidPage(
                                      br(),
                                      plotOutput(outputId = "allSectorsPlot"),
                                      br(),
-                                     HTML("<hr/>"),
+                                     HTML("<hr style='border: none; height: 0.7px; background-color: #B4CFEC;'/>"),
                                      br(),
                                      dataTableOutput(outputId = "yearlyMortalityTable")),
                             tabPanel("Combined Sector Mortality Plot",
@@ -85,7 +86,8 @@ fluidPage(
                     h5("1. Select a species of interest to see state participation in the recreational fishery."),
                     h5("2. To view the breakdown of landings and discards for each state, navigate to the", 
                        em("Individual State Plots"), "tab."),
-                    HTML("<hr/>"),
+                    HTML("<hr style='border: none; height: 0.7px; background-color: #B4CFEC;'/>"),
+                    br(),
                     sidebarLayout(
                       sidebarPanel(
                         selectInput(inputId = "recSpeciesInput", label = "Species (Select One)",
