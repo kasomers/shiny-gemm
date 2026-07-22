@@ -57,7 +57,9 @@ stateColors <- setNames(c("#88CCEE", "#DDCC77", "#CC6677"),
 
 function(input, output, session) {
 
-#Make a table output with total yearly mortality
+  
+  
+#Make a table output that shows how GEMM sectors are grouped
   output$sectorTable <- DT::renderDT({
     groundfish %>%
       group_by(Sector) %>%
