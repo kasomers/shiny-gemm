@@ -127,7 +127,7 @@ for (n in 1:nrow(federallymanaged)){
     federallymanaged$Sector[n] == "Midwater Rockfish" ||
     federallymanaged$Sector[n] == "Midwater Rockfish EM" ||
     federallymanaged$Sector[n] == "Shoreside Hake"){
-    federallymanaged$SuperCombined[n] <- "Commercial Groundfish Trawl"
+    federallymanaged$SuperCombined[n] <- "Federal Trawl"
   }
   else if(
     federallymanaged$Sector[n] == "California Recreational" ||
@@ -141,18 +141,18 @@ for (n in 1:nrow(federallymanaged)){
     federallymanaged$Sector[n] == "OA CA Halibut" ||
     federallymanaged$Sector[n] == "LE CA Halibut" ||
     federallymanaged$Sector[n] == "Incidental" ||
+    federallymanaged$Sector[n] == "Nearshore" ||
     federallymanaged$Sector[n] == "Combined LE & OA CA Halibut"){
-    federallymanaged$SuperCombined[n] <- "Commercial Non-Groundfish"
+    federallymanaged$SuperCombined[n] <- "State"
   }
   else if(
     federallymanaged$Sector[n] == "LE Fixed Gear DTL - Hook & Line" ||
     federallymanaged$Sector[n] == "LE Fixed Gear DTL - Pot" ||
     federallymanaged$Sector[n] == "LE Sablefish - Hook & Line" ||
     federallymanaged$Sector[n] == "LE Sablefish - Pot" ||
-    federallymanaged$Sector[n] == "Nearshore" ||
     federallymanaged$Sector[n] == "OA Fixed Gear - Hook & Line" ||
     federallymanaged$Sector[n] == "OA Fixed Gear - Pot"){
-    federallymanaged$SuperCombined[n] <- "Commercial Groundfish Non-Trawl"
+    federallymanaged$SuperCombined[n] <- "Federal Fixed Gear"
   }
   else(
     federallymanaged$SuperCombined[n] <- federallymanaged$Sector[n]

@@ -8,16 +8,26 @@ library(shinythemes)
 fluidPage(
   theme = shinythemes::shinytheme("flatly"),
   h1("U.S. West Coast Groundfish Mortality Visualization Tool"),
-  br(),
+  br(), 
   br(),
 
-  navbarPage("Menu",
-             tabPanel("Home",
-                      includeMarkdown("ShinyAboutPage.Rmd")),
-             tabPanel("Species Mortality by Sector",
+  navbarPage(title = "Menu", id = "Menu",
+             tabPanel(title = "Home", value = "Home",
+                      tabsetPanel(id = "homeTab",
+                        tabPanel(title = "About", 
+                                 value = "About",
+                                 includeMarkdown("ShinyAboutPage.Rmd")),
+                        tabPanel(title = "Sector Groupings",
+                                 value = "SectorGroupings",
+                                 HTML("<div style='margin-left: 85px; margin-right: 85px;'>"),
+                                 dataTableOutput(outputId = "sectorTable"),
+                                 HTML("</div>")))),
+             
+             tabPanel(title = "Species Mortality by Sector", value = "SpeciesMortality",
                       h3("Getting started:"),
                       h5("1. Select a species of interest to see which fishery sectors contribute to total mortality."),
-                      h5("2. The", em("Combined Sector Mortality Plot"), "categorizes sectors into broader groupings."),
+                      h5("2. The", em("Combined Sector Mortality Plot"), "categorizes sectors into broader groupings, defined", 
+                         actionLink(inputId = "gotoSectorTable", label = "here"), "."),
                       h5("3. For trends in particular sectors, select up to four and navigate to the",
                          em("Individuals Sector Plots"), "tab."),
                       HTML("<hr style='border: none; height: 0.7px; background-color: #B4CFEC;'/>"),
@@ -62,26 +72,25 @@ fluidPage(
                       
                         mainPanel(
                           tabsetPanel(
-                            tabPanel("Sector Mortality Plot", 
+                            tabPanel(title = "Refined Sector Mortality Plot", 
                                      br(),
                                      plotOutput(outputId = "allSectorsPlot"),
+                                     br(), br()),
+                            tabPanel(title = "Combined Sector Mortality Plot",
                                      br(),
-                                     HTML("<hr style='border: none; height: 0.7px; background-color: #B4CFEC;'/>"),
-                                     br(),
-                                     dataTableOutput(outputId = "yearlyMortalityTable")),
-                            tabPanel("Combined Sector Mortality Plot",
-                                     br(),
-                                     plotOutput(outputId = "comboSectorsPlot")),
-                            tabPanel("Individual Sector Plots", 
+                                     plotOutput(outputId = "comboSectorsPlot"),
+                                     br(), br()),
+                            tabPanel(title = "Individual Sector Plots", 
                                      br(),
                                      uiOutput(outputId = "conditionalMessage"),
                                      br(),
-                                     uiOutput(outputId = "individualSectorPlots"))
+                                     uiOutput(outputId = "individualSectorPlots"),
+                                     br(), br())
                           )
                         )
                       )
            ),
-           tabPanel("Recreational Sector Only",
+           tabPanel("Recreational Sector Only", value = "RecreationalSector",
                     h3("Getting started:"),
                     h5("1. Select a species of interest to see state participation in the recreational fishery."),
                     h5("2. To view the breakdown of landings and discards for each state, navigate to the", 
@@ -114,12 +123,16 @@ fluidPage(
                         tabsetPanel(
                           tabPanel("Recreational Mortality", 
                                    br(),
-                                   plotOutput("recMortalityPlot")),
+                                   plotOutput("recMortalityPlot"),
+                                   br()),
                           tabPanel("Individual State Plots", 
                                    br(), 
                                    plotOutput("washingtonRecPlot"),
-                                   plotOutput("oregonRecPlot"), 
-                                   plotOutput("californiaRecPlot"))
+                                   br(),
+                                   plotOutput("oregonRecPlot"),
+                                   br(), 
+                                   plotOutput("californiaRecPlot"),
+                                   br())
                         )
                       )
                     )

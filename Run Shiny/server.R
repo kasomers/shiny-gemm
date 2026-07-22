@@ -29,9 +29,8 @@ sectorColors <- setNames(selectSectorColors, allSectors)
 
 #this code assigns specific colors to each coarse scale sector
 
-comboSectors <- c("Commercial Groundfish Trawl", "Commercial Groundfish Non-Trawl",
-                  "Commercial Non-Groundfish", "Recreational",
-                  "Research", "Tribal")
+comboSectors <- c("Federal Trawl", "Federal Fixed Gear", 
+                  "Recreational", "Research", "State", "Tribal")
 selectComboColors <- c("#44AA99", "#88CCEE", "#DDCC77", "#CC6677", "#9A598F", "#8E3B64")
 comboColors <- setNames(selectComboColors, comboSectors)
 
@@ -59,22 +58,15 @@ stateColors <- setNames(c("#88CCEE", "#DDCC77", "#CC6677"),
 function(input, output, session) {
 
 #Make a table output with total yearly mortality
-  output$yearlyMortalityTable <- DT::renderDT({
+  output$sectorTable <- DT::renderDT({
     groundfish %>%
-      filter(Species == input$speciesInput) %>%
-      group_by(Year) %>%
-      summarize(Landings = sum(Landings),
-                DiscardMortality = sum(DiscardMortality),
-                TotalMortality = sum(TotalMortality)) %>%
-      rename("Year" = Year,
-             "Landings (mt)" = Landings,
-             "Discard Mortality (mt)" = DiscardMortality,
-             "Total Mortality (mt)" = TotalMortality) %>%
-      datatable() %>%
-      formatRound(columns = c("Landings (mt)", 
-                              "Discard Mortality (mt)", 
-                              "Total Mortality (mt)"),
-                  digits = 0)
+      group_by(Sector) %>%
+      summarize(CombinedSector = unique(CombinedSector),
+                SuperCombined = unique(SuperCombined)) %>%
+      rename("GEMM Sector" = Sector,
+             "Refined Sector" = CombinedSector,
+             "Combined Sector" = SuperCombined) %>%
+      datatable(options = list(paging = FALSE))
   })
   
 
@@ -426,5 +418,19 @@ function(input, output, session) {
                                        hjust = 1, vjust = 1,
                                        color = "grey30"),
             axis.text.y = element_text(size = 12, color = "grey30"))    
+  })
+  
+  
+  
+#Create a link to the sector grouping table from the Mortality plots tab  
+  observeEvent(input$gotoSectorTable, {
+    updateNavbarPage(session, 
+                     inputId = "Menu", 
+                     selected = "Home")
+    session$onFlushed(function() {
+    updateTabsetPanel(session, 
+                      inputId = "homeTab", 
+                      selected = "SectorGroupings")
+    })
   })
 }
