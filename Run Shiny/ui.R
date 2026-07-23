@@ -20,6 +20,14 @@ fluidPage(
                         tabPanel(title = "Sector Groupings",
                                  value = "SectorGroupings",
                                  HTML("<div style='margin-left: 85px; margin-right: 85px;'>"),
+                                 br(),
+                                 br(),
+                                 h4("To balance ease of visualization and sector differentiation, 
+                                    we created two sector groupings. The 'Refined' sectors minimally group GEMM sectors, 
+                                    showing more detail, which can be difficult to distinguish in some plots. 
+                                    The 'Combined' sectors provide a higher-level summary that is easier to discern in plots."),
+                                 br(),
+                                 br(),
                                  dataTableOutput(outputId = "sectorTable"),
                                  HTML("</div>")))),
              
@@ -92,7 +100,7 @@ fluidPage(
            ),
            tabPanel("Recreational Sector Only", value = "RecreationalSector",
                     h3("Getting started:"),
-                    h5("1. Select a species of interest to see state participation in the recreational fishery."),
+                    h5("1. Select a species of interest to see states' participation in the recreational fishery."),
                     h5("2. To view the breakdown of landings and discards for each state, navigate to the", 
                        em("Individual State Plots"), "tab."),
                     HTML("<hr style='border: none; height: 0.7px; background-color: #B4CFEC;'/>"),
