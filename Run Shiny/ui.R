@@ -4,6 +4,7 @@ library(tidyverse)
 library(ggplot2)
 library(scales)
 library(shinythemes)
+library(markdown)
 
 fluidPage(
   theme = shinythemes::shinytheme("flatly"),
