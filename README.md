@@ -22,7 +22,7 @@
 #### manifest.json
 > This file is used exclusively to deploy the Shiny App to NOAA's Posit Connect. This manifest includes information like the content’s
 > environment dependencies, and tells Connect how to deploy and host the app. **If any of the files or code in the Run Shiny folder are
-> changed a new manifest must be created to reflect these changes** This can be done by removing the current manifest.json and setting
+> changed a new manifest must be created to reflect these changes**. This can be done by removing the current manifest.json and setting
 > your R working directory to Run Shiny, and running the following code in your console: 
          rsconnect::writeManifest(
              appMode = "shiny",
