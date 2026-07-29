@@ -4,6 +4,7 @@ library(tidyverse)
 library(readxl)
 library(ggplot2)
 library(DT)
+library(markdown)
 
 #this code is run when the page initializes---------------------------------------------------------------------------
   #before any user input
