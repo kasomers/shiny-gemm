@@ -10,7 +10,7 @@
 > mortality data on the third excel sheet with the table description taking up the first two rows of the sheet).
 
 #### GroundfishFilteringCode.R
-> This file filters the data for only federally managed species, the list of those species can be found in this code. This file also
+> This file filters the data for only federally managed species; the list of those species can be found in this code. This file also
 > creates two combined fishery sector columns. One column is for slightly refined fishery sectors based on GEMM sector designation,
 > the other is for higher level summary sectors. How the sectors are combined can be found be exploring this code or by viewing the
 > Sector Groupings tab in the About section of the Shiny App itself. This file saves a new file named ShinyReadyData.csv that can be
