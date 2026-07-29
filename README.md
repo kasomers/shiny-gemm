@@ -43,4 +43,4 @@
 
 #### ShinyAboutPage.Rmd
 > This file sets up the about page for the Shiny App. It is used by ui.R to place it in the user interface. This was placed in a separate
-> file so as not to not overcrowd the ui.R file.
+> file so as to not overcrowd the ui.R file.
