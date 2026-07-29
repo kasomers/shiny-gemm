@@ -26,10 +26,7 @@
 > environment dependencies, and tells Connect how to deploy and host the app. **If any of the files or code in the Run Shiny folder are
 > changed a new manifest must be created to reflect these changes**. This can be done by removing the current manifest.json and setting
 > your R working directory to Run Shiny, and running the following code in your console: 
-         rsconnect::writeManifest(
-             appMode = "shiny",
-             appPrimaryDoc = "server.R"
-         )
+         rsconnect::writeManifest()
 
 #### ui.R
 > This is the user interface portion of the Shiny App. All formatting that the user sees is set up in this file including page titles,
