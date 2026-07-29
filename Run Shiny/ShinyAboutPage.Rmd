@@ -3,6 +3,10 @@ title: "ShinyAboutPage"
 output: html_document
 date: "2026-07-16"
 ---
+```{r}
+library(markdown)
+```
+
 <div style="margin-left: 75px; margin-right: 75px;">
 
 # Welcome!
