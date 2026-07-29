@@ -4,17 +4,19 @@
 ### In Prep Data folder:
 
 #### GEMM Data.xlsx
-> This is the unedited GEMM dataset published in 2026 (as of 7/27/2026). The GroundfishFilteringCode.R file reads in this dataset,
+> This is the unedited GEMM dataset [found in the supplemental data for this NOAA report](https://repository.library.noaa.gov/view/noaa/72826). The GroundfishFilteringCode.R file reads in this dataset,
 > particularly the catch and mortality data provided in "Table 3." Since the filtering code is based on this dataset, all subsequent
 > GEMM datasets to be read into the filtering code and used in the Shiny App should be formatted in **the same way** (aka catch and
 > mortality data on the third excel sheet with the table description taking up the first two rows of the sheet).
 
 #### GroundfishFilteringCode.R
-> This file filters the data for only federally managed species, as of 2026. This file also creates two combined fishery sector columns.
-> One column is for slightly refined fishery sectors based on GEMM sector designation, the other is for higher level summary sectors.
-> This file saves a new file named ShinyReadyData.csv that can be used in the Shiny App. The "Run Shiny" folder already has an accurate
-> ShinyReadyData.csv as of July 2026. **However**, each year that a new GEMM dataset is released, that new data will need to be fed into
-> this file and the new ShinyReadyData.csv will need to replace the old one in the "Run Shiny" folder.
+> This file filters the data for only federally managed species, the list of those species can be found in this code. This file also
+> creates two combined fishery sector columns. One column is for slightly refined fishery sectors based on GEMM sector designation,
+> the other is for higher level summary sectors. How the sectors are combined can be found be exploring this code or by viewing the
+> Sector Groupings tab in the About section of the Shiny App itself. This file saves a new file named ShinyReadyData.csv that can be
+> used in the Shiny App. The "Run Shiny" folder already has an accurate ShinyReadyData.csv as of July 2026. **However**, for each year
+> that a new GEMM dataset is released, that new data will need to be fed into this file and the new ShinyReadyData.csv will need to
+> replace the old one in the "Run Shiny" folder.
 
 
 ### In Run Shiny folder:
