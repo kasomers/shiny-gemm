@@ -4,7 +4,7 @@
 ### In Prep Data folder:
 
 #### GEMM Data.xlsx
-> This is the unedited GEMM dataset [found in the supplemental data for this NOAA report](https://repository.library.noaa.gov/view/noaa/72826). The GroundfishFilteringCode.R file reads in this dataset,
+> This is the unedited GEMM dataset [found in the supplemental data of this NOAA report](https://repository.library.noaa.gov/view/noaa/72826). The GroundfishFilteringCode.R file reads in this dataset,
 > particularly the catch and mortality data provided in "Table 3." Since the filtering code is based on this dataset, all subsequent
 > GEMM datasets to be read into the filtering code and used in the Shiny App should be formatted in **the same way** (aka catch and
 > mortality data on the third excel sheet with the table description taking up the first two rows of the sheet).
