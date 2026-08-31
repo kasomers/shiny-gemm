@@ -238,7 +238,7 @@ function(input, output, session) {
       }
       
       else{
-        speciesSubset <- groundfish %>% filter(Species == input$speciesInput=)
+        speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
       }
       
       write.csv(speciesSubset, file, row.names = FALSE)
