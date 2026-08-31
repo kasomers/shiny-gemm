@@ -237,8 +237,7 @@ function(input, output, session) {
       speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
       
       # if sector input was provided
-      req(input$sectorInput)
-      
+      if(length(req(input$sectorInput))) > 0{
         # also filter to that
         speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
       }
