@@ -75,8 +75,8 @@ fluidPage(
                           br(),
                           br(),
                           downloadButton("downloadSpeciesData", 
-                                         "Download Data for this Species, Limited to Sectors if Selected"),
-                          p("This will download as a .csv file.")
+                                         "Download Data for this Species and Sector(s)"),
+                          p("This will download as a .csv file. All sectors will be included if none are selected above.")
                           ),
                       
                         mainPanel(
