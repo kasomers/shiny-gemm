@@ -233,7 +233,7 @@ function(input, output, session) {
       paste0(input$speciesInput, "MortalityData.csv")
       },
     content = function(file){
-      if(!is.null(input$sectorInput)){
+      if(input$sectorInput != ""){
         speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
       }
       
