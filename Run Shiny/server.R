@@ -225,17 +225,16 @@ function(input, output, session) {
     tagList(lapply(messages, function(m) tags$p(tags$em(m))))
   })
   
-  
-#Make a button to download data for a specific species
+  #Make a button to download data for a specific species
   output$downloadSpeciesData <- downloadHandler(
     filename = function(){
       paste0(input$speciesInput, "MortalityData.csv")
     },
     content = function(file){
-      speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
+      speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
       write.csv(speciesSubset, file, row.names = FALSE)
     }
-  )  
+  )
 
   
 #Make a plot for selected species in the recreational sector
