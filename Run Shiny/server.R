@@ -235,14 +235,14 @@ function(input, output, session) {
     content = function(file){
       
       speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
+      write.csv(speciesSubset, file, row.names = FALSE)
       
       # if sector input was provided
-      if(length(req(input$sectorInput))) > 0{
+        req(input$sectorInput)
         # also filter to that
         speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
-      }
-      
-      write.csv(speciesSubset, file, row.names = FALSE)
+        write.csv(speciesSubset, file, row.names = FALSE)
+        
     }
   )
 
