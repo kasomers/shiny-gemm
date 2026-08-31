@@ -231,8 +231,12 @@ function(input, output, session) {
       paste0(input$speciesInput, "MortalityData.csv")
     },
     content = function(file){
+      speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
+      write.csv(speciesSubset, file, row.names = FALSE)
+      
       speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
       write.csv(speciesSubset, file, row.names = FALSE)
+      
     }
   )
 
