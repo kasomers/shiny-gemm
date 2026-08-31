@@ -233,12 +233,14 @@ function(input, output, session) {
       paste0(input$speciesInput, "MortalityData.csv")
       },
     content = function(file){
-      if(!is.null(input$sectorInput)){
-        speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
-      }
       
-      else{
-        speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
+      speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
+      
+      # if sector input was provided
+      req(input$sectorInput)
+      
+        # also filter to that
+        speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
       }
       
       write.csv(speciesSubset, file, row.names = FALSE)
