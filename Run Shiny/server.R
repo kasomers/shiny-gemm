@@ -226,14 +226,12 @@ function(input, output, session) {
   })
   
   
-  
 #Make a button to download data for a specific species
   output$downloadSpeciesData <- downloadHandler(
     filename = function(){
       paste0(input$speciesInput, "MortalityData.csv")
-      },
+    },
     content = function(file){
-      
       speciesSubset <- groundfish %>% filter(Species == input$speciesInput)
       write.csv(speciesSubset, file, row.names = FALSE)
       
@@ -242,10 +240,9 @@ function(input, output, session) {
       #   # also filter to that
       #   speciesSubset <- groundfish %>% filter(Species == input$speciesInput, CombinedSector %in% input$sectorInput)
       #   write.csv(speciesSubset, file, row.names = FALSE)
-        
+      
     }
-  )
-
+  )  
 
   
 #Make a plot for selected species in the recreational sector
