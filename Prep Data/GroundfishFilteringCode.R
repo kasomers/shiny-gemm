@@ -11,11 +11,11 @@ library(readxl)
     #ignore this message if using ShinyReadyData.csv directly from Github
 
 #read in the data
-groundfishdata <- read_excel("GEMM Data.xlsx", sheet="Table 3 UPDATE", skip = 2)
+groundfishdata <- read_excel("Prep Data/GEMM Data.xlsx", sheet="Table 3", skip = 2)
 
 
 #limit data to only include the federally managed species
-    #Up to date as of June 2026
+    #Up to date as of Nov 2026
 federallymanaged <- groundfishdata %>% 
   filter(Grouping == "Black rockfish (Washington)" | 
            Species %in% c("Arrowtooth Flounder", "Aurora Rockfish", "Bank Rockfish",
@@ -158,6 +158,10 @@ for (n in 1:nrow(federallymanaged)){
     federallymanaged$SuperCombined[n] <- federallymanaged$Sector[n]
   )
 }
+
+# confirm didn't miss anything
+  any(is.na(federallymanaged$CombinedSector))
+  any(is.na(federallymanaged$SuperCombined))
 
 
 #Shiny does not like complex column names, so let's rename them
