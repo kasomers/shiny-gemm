@@ -212,11 +212,11 @@ function(input, output, session) {
       if (sector == "Directed P Halibut") {
         "*Directed Pacific Halibut fishery was only observed from 2017-2023, discards are not estimated for other years."
       } else if (sector == "Nearshore") {
-        "*Nearshore fishery was only observed from 2003-2024, discards are not estimated for other years."
+        "*Nearshore fishery was only observed from 2003-2024. Discards are not estimated for 2002. Discards in 2025 are estimated using the average observed rate from 2022-2024."
       } else if (sector == "Pink Shrimp") {
-        "*Pink Shrimp fishery was only observed from 2004-2005 and 2007-2024, discards are not estimated for other years."
+        "*Pink Shrimp fishery was only observed from 2004-2005 and 2007-2024. Discards are not estimated for 2002-2003 or 2006. Discards in 2025 are estimated using the average observed rate from 2022-2024."
       } else if (sector == "Directed Open Access Groundfish") {
-        "*Directed Open Access Groundfish fishery has been observed since 2003, discards are not estimated for prior years."
+        "*Directed Open Access Groundfish fishery has been observed since 2003. Discards are not estimated for 2002. Discards in 2025 are estimated using the average observed rate from 2022-2024."
       } else {
         NA_character_
       }
